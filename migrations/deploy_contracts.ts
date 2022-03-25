@@ -1,6 +1,5 @@
-
-type Network = "development" | "kovan" | "mainnet";
-module.exports = (artifacts: Truffle.Artifacts, web3: Web3) => {
+export default function main(artifacts: Truffle.Artifacts, web3: Web3) {
+  type Network = "development" | "kovan" | "mainnet";
   return async (
     deployer: Truffle.Deployer,
     network: Network,
@@ -21,4 +20,4 @@ module.exports = (artifacts: Truffle.Artifacts, web3: Web3) => {
     await tether.transfer(accounts[1], "1000000000000000000");
     console.log(`Defi Staking app deployed at ${decentralBank.address}`);
   };
-};
+}

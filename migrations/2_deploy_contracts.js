@@ -1,1 +1,2 @@
-module.exports = require('./deploy_contracts')(artifacts, web3);
+const r = require('./deploy_contracts');
+module.exports = r.default.call(this, artifacts, web3);
